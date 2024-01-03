@@ -1,17 +1,18 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<%
-	//scriptlet
-	String empresa = (String)request.getAttribute("empresa"); //Casting
-	System.out.println(empresa);
-%>
-
-
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	Empresa  <%=empresa%> registrada!
+	<c:if test="${not empty empresa }">
+	Empresa  ${empresa} registrada!  <!--expresion language-->
+	</c:if>
+	
+	<c:if test="${ empty empresa }">
+	Ninguna empresa registrada!  <!--expresion language-->
+	</c:if>
+	
 </body>
 </html>
